@@ -28,7 +28,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -89,12 +92,17 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
+    // Coil dependency
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.6.7")
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.7")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.7")
+
+
 }
 
 kapt {
