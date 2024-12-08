@@ -8,9 +8,10 @@ import androidx.room.Query
 
 @Dao
 interface CatFactDao {
-    @Query("SELECT * FROM cat_fact LIMIT 1")
-    suspend fun getLatestCatFact(): CatFactEntity?
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun insertCatFact(catFact: CatFactEntity)
+
+    @Query("SELECT * FROM cat_fact LIMIT 1")
+    suspend fun getCatFact(): CatFactEntity?
 }

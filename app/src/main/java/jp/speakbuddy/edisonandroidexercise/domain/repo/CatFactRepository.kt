@@ -1,8 +1,8 @@
 package jp.speakbuddy.edisonandroidexercise.domain.repo
 
-import CatFactEntity
+import jp.speakbuddy.edisonandroidexercise.domain.model.CatFact
 
 interface CatFactRepository {
-    suspend fun saveCatFact(fact: String, length: Int)
-    suspend fun getSavedCatFact(): CatFactEntity?
+    suspend fun getSavedCatFact(): CatFact?
+    suspend fun fetchLatestCatFact(): CatFact?
 }

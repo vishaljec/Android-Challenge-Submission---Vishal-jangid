@@ -30,8 +30,8 @@ object AppModule {
     }
 
     @Provides
-    fun provideRepository(dao: CatFactDao): CatFactRepository {
-        return CatFactRepositoryImpl(dao)
+    fun provideRepository(catFactApi: CatFactApi, dao: CatFactDao): CatFactRepository {
+        return CatFactRepositoryImpl(catFactApi, dao)
     }
 
     @Provides
